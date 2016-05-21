@@ -31,6 +31,7 @@ namespace SearchAThing.Wpf.Toolkit
 
     /// <summary>
     /// Manage concurrent status set, with detect of the last status release.
+    /// Example of usage : https://searchathing.com/?p=1424
     /// </summary>
     public class StatusManager : INotifyPropertyChanged
     {
