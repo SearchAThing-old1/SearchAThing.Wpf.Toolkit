@@ -25,6 +25,7 @@
 
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace SearchAThing.Wpf.Toolkit
 {
@@ -41,12 +42,14 @@ namespace SearchAThing.Wpf.Toolkit
         object statusIdLck;
 
         HashSet<uint> statusIdSet;
+        Dictionary<uint, string> statusIdMsgDict;
 
         public StatusManager()
         {
             statusId = 0;
             statusIdSet = new HashSet<uint>();
             statusIdLck = new object();
+            statusIdMsgDict = new Dictionary<uint, string>();
         }
 
         string _status;
@@ -83,12 +86,13 @@ namespace SearchAThing.Wpf.Toolkit
             {
                 id = ++statusId;
                 statusIdSet.Add(statusId);
+                statusIdMsgDict.Add(statusId, msg);
             }
 
             Status = msg;
 
             return id;
-        }        
+        }
 
         /// <summary>
         /// Set the given msg ready status if no other status are actually running.
@@ -96,14 +100,23 @@ namespace SearchAThing.Wpf.Toolkit
         public void ReleaseStatus(uint id, string msg = "Ready.")
         {
             var empty = false;
+            var idMsg = "";
 
             lock (statusIdLck)
             {
                 statusIdSet.Remove(id);
                 empty = statusIdSet.Count == 0;
+#if DEBUG
+                if (!statusIdMsgDict.ContainsKey(id)) Debugger.Break();                
+                idMsg = statusIdMsgDict[id];
+                statusIdMsgDict.Remove(id); // avoid app crash if any
+#endif
             }
-            
-            if (empty) Status = msg;
+
+            if (empty)
+                Status = msg;
+            else
+                Status = $"{idMsg} [done]";
         }
 
     }

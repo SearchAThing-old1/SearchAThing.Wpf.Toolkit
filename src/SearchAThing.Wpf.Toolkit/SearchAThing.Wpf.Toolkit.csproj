@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E0F46D1D-6D66-4537-A36E-A75F8BA3A880}</ProjectGuid>
+    <ProjectGuid>{A413694A-6EE9-4C92-AB7A-C7EE8C92A2FF}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SearchAThing.Wpf.Toolkit</RootNamespace>
