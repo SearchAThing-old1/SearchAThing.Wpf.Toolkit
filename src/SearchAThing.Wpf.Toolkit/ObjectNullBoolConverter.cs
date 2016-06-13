@@ -38,7 +38,15 @@ namespace SearchAThing.Wpf.Toolkit
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (parameter != null && (bool)parameter == true) // inverted mode
+            var invertedMode = false;
+
+            if (parameter != null)
+            {
+                if (parameter is bool) invertedMode = (bool)parameter;
+                else if (parameter is string) invertedMode = bool.Parse((string)parameter);
+            }
+
+            if (invertedMode) // inverted mode
             {
                 if (value == null) return true;
                 return false;
