@@ -49,7 +49,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ObjectNullBoolConverter.cs" />
+    <Compile Include="Converters\MathOpConverterMulti.cs" />
+    <Compile Include="Converters\MathOpConverter.cs" />
+    <Compile Include="Converters\BoolInvertConverter.cs" />
+    <Compile Include="Converters\BoolVisibilityConverter.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Converters\ObjectNullBoolConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -25,37 +25,32 @@
 
 using System;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Data;
 
 namespace SearchAThing.Wpf.Toolkit
 {
 
-    /// <summary>
-    /// return false if value null, true otherwise.
-    /// If parameter == true inverted behavior
-    /// </summary>
-    public class ObjectNullBoolConverter : IValueConverter
+    public class BoolVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var invertedMode = false;
+            if (value == null) return null;
 
-            if (parameter != null)
+            var inverted = parameter != null && System.Convert.ToBoolean(parameter);
+
+            if (inverted)
             {
-                if (parameter is bool) invertedMode = (bool)parameter;
-                else if (parameter is string) invertedMode = bool.Parse((string)parameter);
+                if (System.Convert.ToBoolean(value))
+                    return Visibility.Collapsed;
+                else
+                    return Visibility.Visible;
             }
 
-            if (invertedMode) // inverted mode
-            {
-                if (value == null) return true;
-                return false;
-            }
+            if (System.Convert.ToBoolean(value))
+                return Visibility.Visible;
             else
-            {
-                if (value == null) return false;
-                return true;
-            }
+                return Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
