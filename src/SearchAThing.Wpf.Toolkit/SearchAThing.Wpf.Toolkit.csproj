@@ -53,6 +53,7 @@
     <Compile Include="Converters\MathOpConverter.cs" />
     <Compile Include="Converters\BoolInvertConverter.cs" />
     <Compile Include="Converters\BoolVisibilityConverter.cs" />
+    <Compile Include="DetachableTabItem.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Converters\ObjectNullBoolConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -84,6 +85,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SearchAThing.Sci.GUI\src\SearchAThing.Sci.GUI.csproj">
+      <Project>{c73ffcc5-1967-4dd1-a50e-861008d21c65}</Project>
+      <Name>SearchAThing.Sci.GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SearchAThing.Sci\src\SearchAThing.Sci.csproj">
+      <Project>{f9d7f0ee-d4ff-4455-87be-08539d2d1982}</Project>
+      <Name>SearchAThing.Sci</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
