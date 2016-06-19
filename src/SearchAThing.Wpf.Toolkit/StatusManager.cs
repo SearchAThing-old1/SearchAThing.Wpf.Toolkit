@@ -73,6 +73,11 @@ namespace SearchAThing.Wpf.Toolkit
             }
         }
 
+        public void Clear(string defaultMessage = "Ready.")
+        {
+            Status = defaultMessage;
+        }
+
         /// <summary>
         /// For long-running task in order to release the status
         /// displaying some ready message, use the NewStatus as first
@@ -107,7 +112,7 @@ namespace SearchAThing.Wpf.Toolkit
                 statusIdSet.Remove(id);
                 empty = statusIdSet.Count == 0;
 #if DEBUG
-                if (!statusIdMsgDict.ContainsKey(id)) Debugger.Break();                
+                if (!statusIdMsgDict.ContainsKey(id)) Debugger.Break();
                 idMsg = statusIdMsgDict[id];
                 statusIdMsgDict.Remove(id); // avoid app crash if any
 #endif
