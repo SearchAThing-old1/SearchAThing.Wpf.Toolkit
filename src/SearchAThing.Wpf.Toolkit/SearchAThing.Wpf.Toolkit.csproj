@@ -53,6 +53,7 @@
     <Compile Include="Converters\MathOpConverter.cs" />
     <Compile Include="Converters\BoolInvertConverter.cs" />
     <Compile Include="Converters\BoolVisibilityConverter.cs" />
+    <Compile Include="Converters\ObjectNullVisibilityConverter.cs" />
     <Compile Include="DetachableTabItem.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Converters\ObjectNullBoolConverter.cs" />

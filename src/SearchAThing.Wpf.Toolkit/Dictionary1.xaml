@@ -9,6 +9,7 @@
     <local:MathOpConverter x:Key="MathOpConverter"/>
     <local:MathOpConverterMulti x:Key="MathOpConverterMulti"/>
     <local:ObjectNullBoolConverter x:Key="ObjectNullBoolConverter"/>
+    <local:ObjectNullVisibilityConverter x:Key="ObjectNullVisibilityConverter"/>
     <sciGUI:MeasureTextConverter x:Key="MeasureTextConverter"/>
 
     <!-- brushes -->
@@ -70,6 +71,7 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="25"/>
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
