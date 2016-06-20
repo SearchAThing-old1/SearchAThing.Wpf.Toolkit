@@ -43,19 +43,96 @@ namespace SearchAThing.Wpf.Toolkit
 
             if (values.Any(r => r == DependencyProperty.UnsetValue)) return false;
 
-            switch (((string)parameter).ToLower())
+            var pars = ((string)parameter).ToLower().Split(' ');
+
+            var vi = 0;
+            bool res = true;
+
+            foreach (var p in pars)
             {
-                case "and": return values.Cast<bool>().All(x => x);
-                case "or": return values.Cast<bool>().Any(x => x);
-                case "eq": return values.Select(w => (double)w).Distinct().Count() == 1;
-                case "neq": return values.Select(w => (double)w).Distinct().Count() == values.Length;
-                case "gt": return values.Skip(1).Select((w, j) => (double)(values[j - 1]) > (double)w).All(w => w);
-                case "gte": return values.Skip(1).Select((w, j) => (double)(values[j - 1]) >= (double)w).All(w => w);
-                case "lt": return values.Skip(1).Select((w, j) => (double)(values[j - 1]) < (double)w).All(w => w);
-                case "lte": return values.Skip(1).Select((w, j) => (double)(values[j - 1]) <= (double)w).All(w => w);
+                switch (p)
+                {
+                    case "istrue":
+                        {
+                            res = res && (bool)values[vi];
+                            ++vi;
+                        }
+                        break;
+
+                    case "isfalse":
+                        {
+                            res = res&& !(bool)values[vi];
+                            ++vi;
+                        }
+                        break;
+
+                    case "and":
+                        {
+                            res = res && ((bool)values[vi] && (bool)values[vi + 1]);
+                            vi += 2;
+                        }
+                        break;
+
+                    case "or":
+                        {
+                            res = res && ((bool)values[vi] || (bool)values[vi + 1]);
+                            vi += 2;
+                        }
+                        break;
+
+                    case "eq":
+                        {
+                            if (values[vi] == null || values[vi + 1] == null)
+                                res = false;
+                            else
+                                res = res && (values[vi].Equals(values[vi + 1]));
+                            vi += 2;
+                        }
+                        break;
+
+                    case "neq":
+                        {
+                            if (values[vi] == null || values[vi + 1] == null)
+                                res = true;
+                            else
+                                res = res && !(values[vi].Equals(values[vi + 1]));
+                            vi += 2;
+                        }
+                        break;
+
+                    case "gt":
+                        {
+                            res = res && (System.Convert.ToDouble(values[vi]) > System.Convert.ToDouble(values[vi + 1]));
+                            vi += 2;
+                        }
+                        break;
+
+                    case "gte":
+                        {
+                            res = res && (System.Convert.ToDouble(values[vi]) >= System.Convert.ToDouble(values[vi + 1]));
+                            vi += 2;
+                        }
+                        break;
+
+                    case "lt":
+                        {
+                            res = res && (System.Convert.ToDouble(values[vi]) < System.Convert.ToDouble(values[vi + 1]));
+                            vi += 2;
+                        }
+                        break;
+
+                    case "lte":
+                        {
+                            res = res && (System.Convert.ToDouble(values[vi]) <= System.Convert.ToDouble(values[vi + 1]));
+                            vi += 2;
+                        }
+                        break;
+
+                }
+
             }
 
-            return false;
+            return res;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
