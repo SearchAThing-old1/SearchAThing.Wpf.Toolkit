@@ -10,6 +10,7 @@
     <local:MathOpConverterMulti x:Key="MathOpConverterMulti"/>
     <local:ObjectNullBoolConverter x:Key="ObjectNullBoolConverter"/>
     <local:ObjectNullVisibilityConverter x:Key="ObjectNullVisibilityConverter"/>
+    <local:StringNullOrEmptyConverter x:Key="StringNullOrEmptyConverter"/>
     <sciGUI:MeasureTextConverter x:Key="MeasureTextConverter"/>
 
     <!-- brushes -->
@@ -17,6 +18,7 @@
     <SolidColorBrush x:Key="Brush2" Color="#FF33B99B"/>
     <SolidColorBrush x:Key="Brush3" Color="#FFEC961A"/>
     <SolidColorBrush x:Key="Brush4" Color="#FFFF4B39"/>
+    <SolidColorBrush x:Key="Brush5" Color="#FFFFE77D"/>
 
     <!-- tab control margin 
     <Style TargetType="TabControl">
@@ -108,6 +110,13 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+    
+    <!-- Form Label -->
+    <Style x:Key="FormLabel" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="TextAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
     </Style>
 
 </ResourceDictionary>
