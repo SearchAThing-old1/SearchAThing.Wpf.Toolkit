@@ -104,21 +104,26 @@
                             <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsDefault" Value="true">
-                            <!--<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>-->                             
+                            <!--<Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!-- Form Label -->
     <Style x:Key="FormLabel" TargetType="{x:Type TextBlock}">
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="TextAlignment" Value="Right"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
     </Style>
-    
+
+    <!-- Form Value -->
+    <Style x:Key="FormValue" TargetType="{x:Type FrameworkElement}">
+        <Setter Property="Margin" Value="5,0,0,0"/>
+    </Style>
+
     <!-- Border separator -->
     <Style x:Key="BorderSeparator" TargetType="{x:Type Border}">
         <Setter Property="BorderThickness" Value="1,0,0,0"/>
@@ -126,4 +131,14 @@
         <Setter Property="Margin" Value="5,0,5,0"/>
     </Style>
 
+    <!-- CellDisableTabStop -->
+    <Style x:Key="CellDisableTabStop" TargetType="{x:Type DataGridCell}">
+        <Setter Property="IsTabStop" Value="False"/>
+    </Style>
+
+    <!-- CellHorizontalAlignRight -->
+    <Style x:Key="CellHorizontalAlignRight" TargetType="{x:Type DataGridCell}">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+    
 </ResourceDictionary>
