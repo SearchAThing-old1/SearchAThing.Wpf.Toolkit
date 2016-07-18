@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:SearchAThing.Wpf.Toolkit"
+                    xmlns:SatSCI="clr-namespace:SearchAThing.Sci;assembly=SearchAThing.Sci"
                     xmlns:sciGUI="clr-namespace:SearchAThing.Sci.GUI;assembly=SearchAThing.Sci.GUI">
 
     <!-- converters -->
