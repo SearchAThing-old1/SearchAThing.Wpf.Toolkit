@@ -34,6 +34,23 @@ using System.Linq;
 namespace SearchAThing.Wpf.Toolkit
 {
 
+    /*
+     * example:
+     * 
+     * follow enable the Run textblock only if
+     * - the project results a not-null object
+     * - AND
+     * - the IsRunning property is not true
+     * 
+     * <TextBlock Text="Run" Style="{DynamicResource HyperlinkTextBlk}" MouseLeftButtonDown="runProject_click">
+     *   <TextBlock.IsEnabled>
+     *     <MultiBinding Converter="{StaticResource MathOpConverterMulti}" ConverterParameter="and">
+     *       <Binding Path="CurrentProject" ConverterParameter="false" Converter="{StaticResource ObjectNullBoolConverter}" ElementName="window"/>
+     *       <Binding Path="IsRunning" ConverterParameter="false" Converter="{StaticResource BoolInvertConverter}" ElementName="window"/>
+     *     </MultiBinding>
+     *   </TextBlock.IsEnabled>
+     * </TextBlock>
+     */
     public class MathOpConverterMulti : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
