@@ -26,6 +26,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 
 namespace SearchAThing.Wpf.Toolkit
 {
@@ -107,10 +108,16 @@ namespace SearchAThing.Wpf.Toolkit
             var empty = false;
             var idMsg = "";
 
+            string back_msg = null;
+
             lock (statusIdLck)
             {
                 statusIdSet.Remove(id);
                 empty = statusIdSet.Count == 0;
+                if (!empty)
+                {
+                    back_msg = statusIdMsgDict[statusIdSet.Max()];
+                }
 #if DEBUG
                 if (!statusIdMsgDict.ContainsKey(id)) Debugger.Break();
                 idMsg = statusIdMsgDict[id];
@@ -121,7 +128,12 @@ namespace SearchAThing.Wpf.Toolkit
             if (empty)
                 Status = msg;
             else
-                Status = $"{idMsg} [done]";
+            {
+                if (back_msg != null)
+                    Status = back_msg;
+                else
+                    Status = $"{idMsg} [done]";
+            }
         }
 
     }
