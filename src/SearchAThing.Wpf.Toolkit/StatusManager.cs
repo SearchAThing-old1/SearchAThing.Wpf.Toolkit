@@ -53,6 +53,34 @@ namespace SearchAThing.Wpf.Toolkit
             statusIdMsgDict = new Dictionary<uint, string>();
         }
 
+        bool _progress_visible;
+        public bool ProgressVisible
+        {
+            get { return _progress_visible; }
+            set
+            {
+                if (_progress_visible != value)
+                {
+                    _progress_visible = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ProgressVisible"));
+                }
+            }
+        }
+
+        double _progress_value;
+        public double ProgressValue
+        {
+            get { return _progress_value; }
+            set
+            {
+                if (_progress_value != value)
+                {
+                    _progress_value = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ProgressValue"));
+                }
+            }
+        }
+
         string _status;
         /// <summary>
         /// Bind your textblock to this property.
