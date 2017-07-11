@@ -4,9 +4,9 @@ Toolkit for the WPF framework
 
 ## Latest build
 
-| build | coverage |
-|---|---|
-| [![searchathing MyGet Build Status](https://www.myget.org/BuildSource/Badge/searchathing?identifier=ba5ec466-5b86-4a14-8a56-322ab3786f34)](https://www.myget.org/feed/searchathing/package/nuget/SearchAThing.WpfToolkit) | [![codecov](https://codecov.io/gh/devel0/SearchAThing.Sci/branch/master/graph/badge.svg)](https://codecov.io/gh/devel0/SearchAThing.Sci) |
+| build |
+|---|
+| [![searchathing MyGet Build Status](https://www.myget.org/BuildSource/Badge/searchathing?identifier=ba5ec466-5b86-4a14-8a56-322ab3786f34)](https://www.myget.org/feed/searchathing/package/nuget/SearchAThing.WpfToolkit) |
 
 ## Installation
 - nuget feeds
