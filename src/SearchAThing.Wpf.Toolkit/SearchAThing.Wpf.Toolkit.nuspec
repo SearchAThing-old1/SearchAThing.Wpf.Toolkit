@@ -14,8 +14,8 @@
     <copyright>Copyright(C) 2017 Lorenzo Delana</copyright>
     <tags>c# wpf</tags>    
 	<dependencies>
-		<dependency id="SearchAThing.Sci"/>
-		<dependency id="SearchAThing.Sci.GUI"/>
+		<dependency id="SearchAThing.Sci" version="1.0.0-CI00061"/>
+		<dependency id="SearchAThing.Sci.GUI" version="1.0.0-CI00000"/>
 	</dependencies>
   </metadata>  
 </package>
