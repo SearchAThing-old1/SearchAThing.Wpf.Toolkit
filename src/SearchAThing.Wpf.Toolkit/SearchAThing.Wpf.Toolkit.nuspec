@@ -13,5 +13,9 @@
     <releaseNotes>initial package</releaseNotes>
     <copyright>Copyright(C) 2017 Lorenzo Delana</copyright>
     <tags>c# wpf</tags>    
+	<dependencies>
+		<dependency id="SearchAThing.Sci"/>
+		<dependency id="SearchAThing.Sci.GUI"/>
+	</dependencies>
   </metadata>  
 </package>
