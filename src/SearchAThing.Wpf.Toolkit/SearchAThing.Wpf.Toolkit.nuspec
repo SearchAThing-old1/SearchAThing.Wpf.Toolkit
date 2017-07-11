@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SearchAThing.WpfToolkit</id>
+    <version>1.0.0</version>
+    <title>Toolkit for the WPF framework</title>
+    <authors>Lorenzo Delana</authors>
+    <owners>Lorenzo Delana</owners>
+    <licenseUrl>https://github.com/devel0/SearchAThing.Wpf.Toolkit/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/devel0/SearchAThing.Wpf.Toolkit</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>XAML Converters, Detachable TabItems</description>
+    <releaseNotes>initial package</releaseNotes>
+    <copyright>Copyright(C) 2017 Lorenzo Delana</copyright>
+    <tags>c# wpf</tags>    
+  </metadata>  
+</package>
