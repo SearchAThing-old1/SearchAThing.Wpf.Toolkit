@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net46;net461;net462</TargetFrameworks>
+    <Product>Toolkit for the WPF framework</Product>
+    <Company />
+    <Authors>Lorenzo Delana</Authors>
+    <Description>XAML Converters, Detachable TabItems</Description>
+    <Copyright>Copyright (c) 2015-2017 Lorenzo Delana, https://searchathing.com/</Copyright>
+    <PackageLicenseUrl>https://github.com/devel0/SearchAThing.Wpf.Toolkit/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/devel0/SearchAThing.Wpf.Toolkit</PackageProjectUrl>
+    <RepositoryUrl />
+    <PackageTags>c# wpf</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DocumentationFile>bin\Release\$(TargetFramework)\SearchAThing.Wpf.Toolkit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+</Project>
