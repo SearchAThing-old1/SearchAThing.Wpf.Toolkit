@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Dictionary1.xaml" />
+    <Content Include="Dictionary1.xaml" />
   </ItemGroup>
 
   <ItemGroup>
