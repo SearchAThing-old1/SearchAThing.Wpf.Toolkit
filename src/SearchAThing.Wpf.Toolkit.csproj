@@ -17,15 +17,7 @@
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <DocumentationFile>bin\Release\$(TargetFramework)\SearchAThing.Wpf.Toolkit.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Dictionary1.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Dictionary1.xaml" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
