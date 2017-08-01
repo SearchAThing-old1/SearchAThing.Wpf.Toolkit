@@ -33,8 +33,8 @@ namespace SearchAThing.Wpf.Toolkit
     public class MathOpConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value == null) return false;
+        {            
+            if (value == null) return false;            
             if (parameter == null) return false;
             if (value is string && string.IsNullOrEmpty((string)value)) return false;
 
@@ -42,9 +42,7 @@ namespace SearchAThing.Wpf.Toolkit
 
             try
             {
-                double varg1 = 0d;
-                if (((string)value).Trim().Length != 0)
-                    varg1 = System.Convert.ToDouble(value);
+                var varg1 = System.Convert.ToDouble(value);
                 var varg2 = double.Parse((string)pargs[1].Trim());
 
                 switch (pargs[0].ToLower())
@@ -59,7 +57,6 @@ namespace SearchAThing.Wpf.Toolkit
             }
             catch (Exception ex)
             {
-                return false;
                 throw new Exception($"invalid number [{value}]");
             }
 
