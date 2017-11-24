@@ -108,10 +108,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="SearchAThing.Sci">
-      <Version>1.0.0-CI00006</Version>
+      <Version>1.0.0-CI00019</Version>
     </PackageReference>
     <PackageReference Include="SearchAThing.Sci.GUI">
-      <Version>1.0.0-CI00001</Version>
+      <Version>1.0.0-CI00003</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
