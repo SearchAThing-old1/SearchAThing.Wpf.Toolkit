@@ -101,11 +101,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Dictionary1.xaml">
+    <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="SearchAThing.Sci">
