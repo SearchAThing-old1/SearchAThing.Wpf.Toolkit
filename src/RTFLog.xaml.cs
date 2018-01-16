@@ -68,11 +68,11 @@ namespace SearchAThing.Wpf.Toolkit
         FlowDocument doc;
         Paragraph para;
 
-        Brush black = new SolidColorBrush(Colors.Black);
-        Brush blue = new SolidColorBrush(Colors.Blue);
-        Brush darkorange = new SolidColorBrush(Colors.DarkOrange);
-        Brush red = new SolidColorBrush(Colors.Red);
-        Brush darkgreen = new SolidColorBrush(Colors.DarkGreen);
+        public Brush BrushNormal { get; set; } = new SolidColorBrush(Colors.Black);
+        public Brush BrushInfo { get; set; } = new SolidColorBrush(Colors.Blue);
+        public Brush BrushWarning { get; set; } = new SolidColorBrush(Colors.IndianRed);
+        public Brush BrushError { get; set; } = new SolidColorBrush(Colors.Red);
+        public Brush BrushSuccess { get; set; } = new SolidColorBrush(Colors.DarkGreen);
 
         public enum LogColor
         {
@@ -124,10 +124,10 @@ namespace SearchAThing.Wpf.Toolkit
             {
                 switch (color)
                 {
-                    case LogColor.info: run.Foreground = blue; break;
-                    case LogColor.warning: run.Foreground = darkorange; break;
-                    case LogColor.error: run.Foreground = red; break;
-                    case LogColor.success: run.Foreground = darkgreen; break;
+                    case LogColor.info: run.Foreground = BrushInfo; break;
+                    case LogColor.warning: run.Foreground = BrushWarning; break;
+                    case LogColor.error: run.Foreground = BrushError; break;
+                    case LogColor.success: run.Foreground = BrushSuccess; break;
                 }
             }
             if (para == null)
