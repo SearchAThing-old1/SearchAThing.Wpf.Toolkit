@@ -45,6 +45,18 @@ namespace SearchAThing.Wpf.Toolkit
         }
         #endregion
 
+        #region DefaultFont
+        public static readonly DependencyProperty DefaultFontProperty =
+            DependencyProperty.Register("DefaultFont",
+                typeof(FontFamily), typeof(RTFLog), new FrameworkPropertyMetadata(null));
+
+        public FontFamily DefaultFont
+        {
+            get { return (FontFamily)GetValue(DefaultFontProperty); }
+            set { SetValue(DefaultFontProperty, value); }
+        }
+        #endregion
+
         public RTFLog()
         {
             InitializeComponent();
@@ -57,15 +69,36 @@ namespace SearchAThing.Wpf.Toolkit
         Paragraph para;
 
         Brush black = new SolidColorBrush(Colors.Black);
-        Brush darkgreen = new SolidColorBrush(Colors.DarkGreen);
+        Brush blue = new SolidColorBrush(Colors.Blue);
         Brush darkorange = new SolidColorBrush(Colors.DarkOrange);
         Brush red = new SolidColorBrush(Colors.Red);
+        Brush darkgreen = new SolidColorBrush(Colors.DarkGreen);
 
         public enum LogColor
         {
+            /// <summary>
+            /// black
+            /// </summary>
             normal,
+
+            /// <summary>
+            /// blue
+            /// </summary>
+            info,
+
+            /// <summary>
+            /// darkorange
+            /// </summary>
             warning,
+
+            /// <summary>
+            /// darkred
+            /// </summary>
             error,
+
+            /// <summary>
+            /// darkgreen
+            /// </summary>
             success
         }
 
@@ -80,13 +113,18 @@ namespace SearchAThing.Wpf.Toolkit
         /// <summary>
         /// append log text
         /// </summary>        
-        public void Append(string msg, bool newline = false, LogColor color = LogColor.normal)
+        public void Append(string msg, bool newline = false, LogColor color = LogColor.normal,
+            FontWeight? fontWeight = null, FontFamily fontFamily = null)
         {
             var run = new Run() { Text = msg };
+            if (fontWeight.HasValue) run.FontWeight = fontWeight.Value;
+            if (fontFamily != null) run.FontFamily = fontFamily;
+            else if (DefaultFont != null) run.FontFamily = DefaultFont;
             if (color != LogColor.normal)
             {
                 switch (color)
                 {
+                    case LogColor.info: run.Foreground = blue; break;
                     case LogColor.warning: run.Foreground = darkorange; break;
                     case LogColor.error: run.Foreground = red; break;
                     case LogColor.success: run.Foreground = darkgreen; break;
