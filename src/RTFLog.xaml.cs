@@ -59,10 +59,12 @@ namespace SearchAThing.Wpf.Toolkit
         Brush black = new SolidColorBrush(Colors.Black);
         Brush darkgreen = new SolidColorBrush(Colors.DarkGreen);
         Brush darkorange = new SolidColorBrush(Colors.DarkOrange);
+        Brush gray = new SolidColorBrush(Colors.Gray);
         Brush red = new SolidColorBrush(Colors.Red);
 
         public enum LogColor
         {
+            trace,
             normal,
             warning,
             error,
@@ -80,18 +82,29 @@ namespace SearchAThing.Wpf.Toolkit
         /// <summary>
         /// append log text
         /// </summary>        
-        public void Append(string msg, bool newline = false, LogColor color = LogColor.normal)
+        public void Append(string msg, bool newline = false, LogColor color = LogColor.normal)        
         {
-            var run = new Run() { Text = msg };
+            Brush brush = null;
             if (color != LogColor.normal)
             {
                 switch (color)
                 {
-                    case LogColor.warning: run.Foreground = darkorange; break;
-                    case LogColor.error: run.Foreground = red; break;
-                    case LogColor.success: run.Foreground = darkgreen; break;
+                    case LogColor.trace: brush = gray; break;
+                    case LogColor.warning: brush = darkorange; break;
+                    case LogColor.error: brush= red; break;
+                    case LogColor.success: brush = darkgreen; break;
                 }
             }
+
+            Append(msg, newline, brush);
+        }
+
+        public void Append(string msg, bool newline = false, Brush color = null)
+        {
+            var run = new Run() { Text = msg };
+            
+            run.Foreground = color;
+
             if (para == null)
             {
                 para = new Paragraph(run) { Margin = new Thickness(0) };
