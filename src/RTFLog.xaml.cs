@@ -28,7 +28,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace SearchAThing.Wpf.Toolkit
+namespace OLDSearchAThing.Wpf.Toolkit
 {
     public partial class RTFLog : UserControl
     {

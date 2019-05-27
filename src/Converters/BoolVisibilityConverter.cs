@@ -28,7 +28,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace SearchAThing.Wpf.Toolkit
+namespace OLDSearchAThing.Wpf.Toolkit
 {
 
     public class BoolVisibilityConverter : IValueConverter

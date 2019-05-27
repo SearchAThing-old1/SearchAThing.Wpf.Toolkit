@@ -7,8 +7,8 @@
     <ProjectGuid>{A413694A-6EE9-4C92-AB7A-C7EE8C92A2FF}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SearchAThing.Wpf.Toolkit</RootNamespace>
-    <AssemblyName>SearchAThing.Wpf.Toolkit</AssemblyName>
+    <RootNamespace>OLDSearchAThing.Wpf.Toolkit</RootNamespace>
+    <AssemblyName>OLDSearchAThing.Wpf.Toolkit</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -74,7 +74,6 @@
     <Compile Include="Converters\StringNullOrEmptyConverter.cs" />
     <Compile Include="Converters\ObjectNullVisibilityConverter.cs" />
     <Compile Include="DetachableTabItem.cs" />
-    <Compile Include="Helpers.cs" />
     <Compile Include="Converters\ObjectNullBoolConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -114,11 +113,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SearchAThing.Sci">
-      <Version>1.0.0-CI00020</Version>
+    <PackageReference Include="OLDSearchAThing.Sci">
+      <Version>1.0.0-CI00004</Version>
     </PackageReference>
-    <PackageReference Include="SearchAThing.Sci.GUI">
-      <Version>1.0.0-CI00005</Version>
+    <PackageReference Include="OLDSearchAThing.Sci.GUI">
+      <Version>1.0.0-CI00000</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,17 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:SearchAThing.Wpf.Toolkit"
-                    xmlns:SatSCI="clr-namespace:SearchAThing.Sci;assembly=SearchAThing.Sci"
-                    xmlns:sciGUI="clr-namespace:SearchAThing.Sci.GUI;assembly=SearchAThing.Sci.GUI">
-
-    <!-- converters -->
-    <local:BoolInvertConverter x:Key="BoolInvertConverter"/>
-    <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter"/>
-    <local:MathOpConverter x:Key="MathOpConverter"/>
-    <local:MathOpConverterMulti x:Key="MathOpConverterMulti"/>
-    <local:ObjectNullBoolConverter x:Key="ObjectNullBoolConverter"/>
-    <local:ObjectNullVisibilityConverter x:Key="ObjectNullVisibilityConverter"/>
-    <local:StringNullOrEmptyConverter x:Key="StringNullOrEmptyConverter"/>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                    
+                    xmlns:sciGUI="clr-namespace:OLDSearchAThing.Sci.GUI;assembly=OLDSearchAThing.Sci.GUI"
+                    >
+    
     <sciGUI:MeasureTextConverter x:Key="MeasureTextConverter"/>
 
     <!-- brushes -->

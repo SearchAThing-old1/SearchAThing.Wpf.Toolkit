@@ -27,7 +27,7 @@ using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace SearchAThing.Wpf.Toolkit
+namespace OLDSearchAThing.Wpf.Toolkit
 {
 
     /// <summary>

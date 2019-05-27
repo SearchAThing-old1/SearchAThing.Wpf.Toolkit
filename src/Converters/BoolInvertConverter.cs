@@ -29,7 +29,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Linq;
 
-namespace SearchAThing.Wpf.Toolkit
+namespace OLDSearchAThing.Wpf.Toolkit
 {
 
     public class BoolInvertConverter : IValueConverter

@@ -28,7 +28,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 
-namespace SearchAThing.Wpf.Toolkit
+namespace OLDSearchAThing.Wpf.Toolkit
 {
 
     /// <summary>

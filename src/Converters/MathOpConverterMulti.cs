@@ -28,10 +28,10 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 using static System.Math;
-using SearchAThing;
+using OLDSearchAThing;
 using System.Linq;
 
-namespace SearchAThing.Wpf.Toolkit
+namespace OLDSearchAThing.Wpf.Toolkit
 {
 
     /*

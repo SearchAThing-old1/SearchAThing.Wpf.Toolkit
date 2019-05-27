@@ -28,7 +28,7 @@ using System.Windows.Controls;
 using System.Linq;
 using System.Windows;
 
-namespace SearchAThing.Wpf.Toolkit
+namespace OLDSearchAThing.Wpf.Toolkit
 {
 
     public class DetachableTabItem : TabItem

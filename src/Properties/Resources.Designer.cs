@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SearchAThing.Wpf.Toolkit.Properties {
+namespace OLDSearchAThing.Wpf.Toolkit.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SearchAThing.Wpf.Toolkit.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SearchAThing.Wpf.Toolkit.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OLDSearchAThing.Wpf.Toolkit.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
